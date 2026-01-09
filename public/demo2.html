@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TFLStore</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+<body>
+    <button id="btnSend">Send Data</button>
+    <script>
+            $(document).ready(function(){
+                $("button").click(function(){
+                    alert("button clicked.....");
+
+
+                    var newCustomer = {
+                        "id":76,
+                        "firstname":"nitish",
+                        "lastname":"kharat",
+                        "email":"nitish.kharat@gmail.com",
+                        "contactnumber":"8149416008"
+                    };
+                    let url = "/api/register";
+                    $.post(url,newCustomer, function(){
+                        console.log("data is posted to server");
+                    });
+                });
+            });
+    </script>
+</body>
+</html>

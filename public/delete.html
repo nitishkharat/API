@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Flower | TFL Store</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+<body>
+
+    <h1>Update Existing Flower</h1>
+    <hr>
+
+    <form action="/api/flowers/update" method="post">
+        <table>
+
+            <tr>
+                <td><label for="id">Flower ID</label></td>
+                <td><input type="text" id="id" name="id"></td>
+            </tr>
+
+            <tr>
+                <td><label for="image">Image</label></td>
+                <td><input type="text" id="image" name="image"></td>
+            </tr>
+
+            <tr>
+                <td><label for="name">Name</label></td>
+                <td><input type="text" id="name" name="name"></td>
+            </tr>
+
+            <tr>
+                <td><label for="discription">Discription</label></td>
+                <td><input type="text" id="discription" name="discription"></td>
+            </tr>
+
+            <tr>
+                <td><label for="unitprice">Untit Price</label></td>
+                <td><input type="number" id="unitprice" name="unitprice"></td>
+            </tr>
+
+            <tr>
+                <td><label for="quantity">Quantity</label></td>
+                <td><input type="number" id="quantity" name="quantity"></td>
+            </tr>
+
+            <tr>
+                <td></td>
+                <td><button type="submit">Update Flower</button></td>
+            </tr>
+        </table>
+    </form>
+
+    <script>
+        $(document).ready(function(){
+                $("button").click(function(){
+                    //alert("button clicked.....");
+
+                    var updateCustomer = {
+                        "id":5,
+                        "firstname":"karan",
+                        "lastname":"rajput",
+                        "email":"karan.rajput@gmail.com",
+                        "contactnumber":"9049416998"
+                    };
+                    let url = "/api/customers/" + updateCustomer.id;
+                    /*$.put(url,updateCustomer, function(){
+                        console.log("data is updated to server");
+                    });*/
+
+                    //post 
+                    $.ajax({
+                        url:url,
+                        type:'post',
+                        data:updateCustomer,
+                        success: function (result){
+                            console.log("new customer is added in server");
+                        }
+                    });
+
+                    //get
+                    $.ajax({
+                        url:url,
+                        type:'get',
+                        data:updateCustomer,
+                        success: function (result){
+                            console.log("customer is here in server");
+                        }
+                    });
+
+                    //put
+                    $.ajax({
+                        url:url,
+                        type:'put',
+                        data:updateCustomer,
+                        success: function (result){
+                            console.log("customer is updated in server");
+                        }
+                    });
+
+                    //delete
+                    $.ajax({
+                        url:url,
+                        type:'delete',
+                        data:updateCustomer,
+                        success: function (result){
+                            console.log("customer is deleted in server");
+                        }
+                    });                                       
+                });
+            });
+
+        /*var flower = {
+            "id":7,
+            "name":"Lotus",
+            "description":"Romantic flower",
+            "imageurl":"/images/lotus.jpg",
+            "quantity":400,
+            "price":550
+        }
+        var id = document.getElementById("id");
+        var name = document.getElementById("name");
+        var description = document.getElementById("description");
+        var imageurl = document.getElementById("image");
+        var quantity = document.getElementById("quantity");
+        var price = document.getElementById("unitprice");*/
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TFLStore</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+
+</head>
+<body>
+    <button id="btn1">Hide Me</button>
+    <button id="btn2">Show Me</button>
+    <p id="para">Ajay Kale</p>
+    <p id="para1">Ajay Kale</p>
+    <p>TFLStore</p>
+    <script>
+        /*var btn = document.getElementById("btnHide");
+        btn.addEventListener("click", function(){
+            var para = documnet.getElementById("para");
+            para.hide();
+        });*/
+
+        $(document).ready(function(){
+            $("#btn1").click(function(){
+                $("#para").hide();
+            })
+            $("#btn2").click(function(){
+                $("#para2").hide();
+            })
+        })
+
+    </script>
+    
+</body>
+</html>

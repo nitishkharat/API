@@ -1,0 +1,8 @@
+[
+  {"id":1,"firstname":"John","lastname":"Doe","email":"john.doe@gmail.com","contactnumber":"9876543210"},
+  {"id":2,"firstname":"Emma","lastname":"Smith","email":"emma.smith@gmail.com","contactnumber":"9123456780"},
+  {"id":3,"firstname":"Michael","lastname":"Brown","email":"michael.brown@gmail.com","contactnumber":"9988776655"},
+  {"id":4,"firstname":"Sophia","lastname":"Johnson","email":"sophia.johnson@gmail.com","contactnumber":"9012345678"},
+  {"id":5,"firstname":"David","lastname":"Wilson","email":"david.wilson@gmail.com","contactnumber":"9090909090"},
+  {"id":6,"firstname":"Olivia","lastname":"Taylor","email":"olivia.taylor@gmail.com","contactnumber":"9345678123"}
+]

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TFLStore</title>
+    <script src="/jquery.min.js"></script>
+</head>
+<body>
+    <h1>welcome too see flower</h1>
+    <h2>Today's flower available</h2>
+    <hr>
+    <button id="readFlower">Get Flower</button>
+    <ol id="flowerlist">
+    </ol>
+    <p id="para1"></p>
+    <script>
+        $(document).ready(function(){
+            console.log("document is ready");
+            $("#readFlower").click(function(){
+                console.log("button is clicked");
+                var p = document.getElementById("para1");
+                $.get("/api/flowers", function(data, status){
+                    //alert("Data:" + JSON.stringify(data.data) +"\nstatus:" +status);
+                    //console.log(data);
+
+                    for(var i=0; i<data.length; i++){
+                        console.log(data[i]);
+                        p.innerHTML = p.innerHTML + "   " + data[i].name;
+                    }
+                });
+            });
+        });
+    async function getFlowerFromTFLStore(){
+        var flowerURL = "/api/flowers";
+        try{
+            let response = await fetch(flowerURL);
+            let data = await response.json();
+            console.log(data);
+        } catch(err){
+            console.log(err);
+        }
+    }
+    getFlowerFromTFLStore();
+    </script>
+
+</body>
+</html>

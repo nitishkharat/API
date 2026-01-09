@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration | Ajay Kale Graphics</title>
+</head>
+<body>
+
+    <h1>Registration Page</h1>
+
+    <form action="/api/register" method="post">
+        <table>
+            <tr>
+                <td><label for="userid">ID</label></td>
+                <td><input type="text" name="id" id="userid" required></td>
+            </tr>
+
+            <tr>
+                <td><label for="firstname">First Name</label></td>
+                <td><input type="text" name="firstname" id="firstname" required></td>
+            </tr>
+
+            <tr>
+                <td><label for="lastname">Last Name</label></td>
+                <td><input type="text" name="lastname" id="lastname" required></td>
+            </tr>
+
+            <tr>
+                <td><label for="email">Email</label></td>
+                <td><input type="email" name="email" id="email" required></td>
+            </tr>
+
+            <tr>
+                <td><label for="contactnumber">Contact Number</label></td>
+                <td><input type="tel" name="contactnumber" id="contactnumber" required></td>
+            </tr>
+
+            <tr>
+                <td></td>
+                <td><button type="submit">Register</button></td>
+            </tr>
+        </table>
+    </form>
+
+</body>
+</html>
